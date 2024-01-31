@@ -1,4 +1,4 @@
-package java.holic.bootmin;
+package jaava.holic.bootmin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

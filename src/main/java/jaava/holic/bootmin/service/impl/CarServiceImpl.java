@@ -1,10 +1,10 @@
-package java.holic.bootmin.service.impl;
+package jaava.holic.bootmin.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import java.holic.bootmin.model.Car;
-import java.holic.bootmin.repository.CarRepository;
-import java.holic.bootmin.service.CarService;
+import jaava.holic.bootmin.model.Car;
+import jaava.holic.bootmin.repository.CarRepository;
+import jaava.holic.bootmin.service.CarService;
 import java.util.List;
 
 @Service

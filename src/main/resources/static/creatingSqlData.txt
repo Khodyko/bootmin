@@ -1,0 +1,122 @@
+Напиши скрипт на postgres, который создаст таблицы для классов и заполни их данными.
+Я приложу так же конфигурацию.
+
+package jaava.holic.bootmin.model;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Car {
+
+typescript
+Copy
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Long id;
+
+@Column
+private String name;
+
+@OneToOne
+private Owner owner;
+
+public Car(Long id, String name, Owner owner) {
+    this.id = id;
+    this.name = name;
+    this.owner = owner;
+}
+
+public Car() {
+}
+
+public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
+
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public Owner getOwner() {
+    return owner;
+}
+
+public void setOwner(Owner owner) {
+    this.owner = owner;
+}
+}
+package jaava.holic.bootmin.model;
+
+import jakarta.persistence.*;
+
+import java.util.Date;
+
+@Entity
+public class Owner {
+
+typescript
+Copy
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Long id;
+
+@Column
+private String name;
+
+@Column
+private Date birthDate;
+
+public Owner(Long id, String name, Date birthDate) {
+    this.id = id;
+    this.name = name;
+    this.birthDate = birthDate;
+}
+
+public Owner() {
+}
+
+public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
+
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public Date getBirthDate() {
+    return birthDate;
+}
+
+public void setBirthDate(Date birthDate) {
+    this.birthDate = birthDate;
+}
+}
+
+server.port=8981
+
+spring.datasource.url= jdbc:postgresql://localhost:5432/postgres
+
+spring.datasource.username= postgres
+spring.datasource.password= postgres
+
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
+
+Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto= none

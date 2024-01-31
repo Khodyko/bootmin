@@ -1,4 +1,4 @@
-package java.holic.bootmin.model;
+package jaava.holic.bootmin.model;
 
 import jakarta.persistence.*;
 
